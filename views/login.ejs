@@ -1,0 +1,38 @@
+<%- include('layouts/header.ejs') %>
+<div class="container-fluid h-100">
+    <div class="row justify-content-center h-100">
+        <div class="col-md-4 col-xl-3 chat">
+            <div class="card mb-sm-3 mb-md-0 ">
+                <div class="card-header">
+                  Login Page
+                </div>
+                <div class="card-body contacts_body">
+                    <div class="card-body">
+                            <div class="login-box">
+                                <img src="https://blog.wildix.com/wp-content/uploads/2016/11/webrtc-logo-vert-retro-255x305-1.png" alt="Webrtc Logo" class="logo">
+                                <form action="/login" method="POST">
+                                    <label for="email">Email or Phone:</label>
+                                    <input type="text" name="username"  placeholder="Username"  id="username" required>
+                                    <label for="password">Password:</label>
+                                    <input type="password" name="password" placeholder="Password" id="password" required>
+                                    <button type="submit">Log In</button>
+                                    <a href="/resetPassword">Forgot Password?</a>
+                                    <hr>
+                                    <button type="button">
+                                        <a href="/register">Create New Account</a>
+                                    </button>
+                                </form>
+                            </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <% if(typeof message !== 'undefined'){   %>
+                        <p style="color:red;"><%= message %></p>
+                    <%}%>  
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('layouts/footer.ejs') %>

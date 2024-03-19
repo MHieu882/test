@@ -1,0 +1,23 @@
+<%- include('layouts/header.ejs') %>
+<form action="/changePassword" method="POST">
+    <img src="/images/key.png" class="avatar">
+    <br>
+    <input required type="password" class="text" id="oldpassword" name="oldpassword">
+    <span>Old password</span>
+    <br>
+    <input required type="password" class="text" id="newpassword" name="newpassword">
+    <span>New password</span>
+    <br>
+    <input required type="password" class="text" id="newpassword2" name="newpassword2">
+    <span>Confirm password</span>
+    <br>
+    <button class="signin">
+        Update
+    </button>
+    <% if(typeof message !== 'undefined'){   %>
+        <p style="color:red;"><%= message %></p>
+    <%}%>  
+</form>
+
+
+<%- include('layouts/footer.ejs') %>

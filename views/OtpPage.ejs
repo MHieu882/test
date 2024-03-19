@@ -1,0 +1,28 @@
+
+<div class="img-login">
+    <img src="">
+</div>
+<div class="page">
+    <div class="header-container">
+        <h2 class="active"> Reset password </h2>
+    </div>
+    <form action="/OtpPage" method="POST">
+        <img src="" class="avatar">
+        <input type="hidden" class="text" id="email" name="email" value=<%= email %>>
+        <input required type="text" class="text" id="otp" name="otp">
+        <span>OTP</span>
+        <br>
+        <input required type="password" class="text" id="password" name="password">
+        <span>New password</span>
+        <br>
+        <input required type="password" class="text" id="password2" name="password2">
+        <span>Confirm password</span>
+        <br>
+        <button class="repass">
+            UPDATE
+        </button>
+    </form>
+</div>
+<% if(typeof message !== 'undefined'){   %>
+    <p style="color:red;"><%= message %></p>
+<%}%>  

@@ -1,0 +1,53 @@
+
+<%- include('layouts/header.ejs') %>
+<div class="container-fluid h-100">
+    <div class="row justify-content-center h-100">
+        <div class="col-md-4 col-xl-3 chat">
+            <div class="card mb-sm-3 mb-md-0 ">
+                <div class="card-header">
+                  Register Page
+                </div>
+                <div class="card-body contacts_body">
+                    <div class="card-body">
+                            <div class="login-box">
+                                <form action="/register" method="POST">
+                                    <label for="name">Name </label>
+                                    <input type="text" name="name"placeholder="Name"  id="name" required>
+
+                                    <label for="username">UserName </label>
+                                    <input type="text" name="username" placeholder="Username"  id="username" required>
+
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email"  placeholder="Email"  id="email" required>
+
+                                    <label for="password">Password:</label>
+                                    <input type="password" name="password" placeholder="Password" id="password" required>
+                                    <br>
+                                    <button type="submit">Register</button>
+                                    <a href="/login">Login</a>
+                                </form>
+                            </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <% 
+                    if(typeof success !== 'undefined'){
+                        if(success){
+                            %>
+                                <p style="color:red;"><%= message %></p>
+                            <%
+                        }
+                        else{
+                            %>
+                                <p style="color:red;"><%= message %></p>
+                            <%
+                        }
+                    }
+                %> 
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('layouts/footer.ejs') %>
